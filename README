@@ -1,0 +1,40 @@
+LICENSE
+
+See the LICENSE file.
+
+INSTALL
+
+Convert the basic program in src/storm.bas to a tap file using the
+BAS2TAP program available at:
+
+  http://www.worldofspectrum.org/utilities.html
+
+Then load the program from the tap file in an emulator (e.g. fuse),
+run it and follow the instructions.
+
+CODE DOCUMENTATION
+
+The basic program in src/storm.bas 
+
+Routines:
+
+* storm : main program.
+* present (presentation) : shows the title screen and the keys, and
+  waits for a key to be pressed.
+* init : initializes the program variables.
+* main : main program loop.
+* docmd (do command) : executes a command for the current player.
+* move (move command) : moves the current player as indicated by the
+  current command.
+* getinp (get input) : reads input from the player in the current
+  command.
+* display : displays the screen.
+
+Global Variables:
+
+* m$ (array(20) of string(20)) : map of the dungeon
+* p (array(2) of number(3)) : array of players (rep, xpos, ypos)
+* p : current player 
+* c$ : current command
+* gameon : 0 if the game is finished, 1 otherwise.
+
