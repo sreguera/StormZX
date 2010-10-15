@@ -23,18 +23,22 @@ Routines:
   waits for a key to be pressed.
 * init : initializes the program variables.
 * main : main program loop.
+* round : one game round.
 * docmd (do command) : executes a command for the current player.
 * move (move command) : moves the current player as indicated by the
   current command.
 * getinp (get input) : reads input from the player in the current
   command.
-* display : displays the screen.
+* dismap : draws the map on the screen.
+* disitems : draws the items on the screen. 
 
 Global Variables:
 
-* m$ (array(20) of string(20)) : map of the dungeon
-* p (array(2) of number(3)) : array of players (rep, xpos, ypos)
-* p : current player 
+* m$ (array(mrows) of string(20)) : map of the dungeon
+* mrows : number of rows in the map array.
+* p (array(nps) of number(3)) : array of players (rep, xpos, ypos, hp)
+* nps : number of players
+* cp : current player 
 * c$ : current command
 * gameon : 0 if the game is finished, 1 otherwise.
 

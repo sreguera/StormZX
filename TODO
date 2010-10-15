@@ -1,19 +1,23 @@
-* Check for collisions between characters.
-* Improve opening screen using centered strings and vertical space.
 * Create a finish screen.
-* Change color scheme to white on black.
 * Use UDGs, colors, ...
-* Add the hit points character stat.
-* Show player stats somewhere.
-* Start making the player lose 1hp each time it collides with another character.
 * IA for the NPCs.
-* Put in DATAs the initial definition of characters.
 * Change the command from the input key to verb noun1 noun2.
-* Create a subroutine for turns.
 * Add objects. Start with gold $.
 * Random Character Generation.
 * Random Level Generation.
 * Visibility. Show only what the player is seeing.
-* Improve speed by redrawing only characters and objects.
 * Use machine code for increased speed and saved space.
 * Use lower lines for logging.
+* Add sound effects.
+
+DONE
+* Improve opening screen using centered strings and vertical space.
+* Put in DATAs the initial definition of characters.
+* Check for collisions between characters.
+* Increased map height from 20 to 22 lines.
+* Add the hit points character stat.
+* Improve speed by redrawing only characters and objects.
+* Create a subroutine for rounds.
+* Show player stats somewhere.
+* Start making the player lose 1hp each time it collides with another character.
+* Change color scheme to white on black.
