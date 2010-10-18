@@ -27,10 +27,11 @@ Routines:
 * docmd (do command) : executes a command for the current player.
 * move (move command) : moves the current player as indicated by the
   current command.
-* getinp (get input) : reads input from the player in the current
-  command.
-* dismap : draws the map on the screen.
-* disitems : draws the items on the screen. 
+* getinp (get input) : reads a command from the current player.
+* keyinp (keyboard input) : reads a command from the keyboard.
+* ai_inp (AI input) : reads a command from the player AI.
+* dismap (display map) : draws the map on the screen.
+* disitems (display items) : draws the items on the screen. Also stats.
 
 Global Variables:
 

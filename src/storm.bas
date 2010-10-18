@@ -1,7 +1,7 @@
   10 REM *** STORM ***
   20 REM (c) S. Reguera 2010
   30 GO SUB 70: REM present
-  40 GO SUB 660: REM init
+  40 GO SUB 750: REM init
   50 GO SUB 190: REM main
   60 STOP 
   70 REM *** present ***
@@ -17,8 +17,8 @@
  170 CLS 
  180 RETURN 
  190 REM *** main ***
- 200 GO SUB 590: REM dismap
- 210 GO SUB 620: REM disitems
+ 200 GO SUB 680: REM dismap
+ 210 GO SUB 710: REM disitems
  220 GO SUB 250: REM round
  230 IF gameon THEN GO TO 210
  240 RETURN 
@@ -26,7 +26,7 @@
  260 FOR c=1 TO nps: LET cp=c
  270 GO SUB 550: REM getinp
  280 GO SUB 320: REM docmd
- 290 GO SUB 620: REM disitems
+ 290 GO SUB 710: REM disitems
  300 NEXT c
  310 RETURN 
  320 REM *** docmd ***
@@ -50,58 +50,67 @@
  500 LET p(cp,2)=mx: LET p(cp,3)=my
  510 RETURN 
  520 REM *** attack ***
- 530 LET p(1,4)=p(1,4)-1
+ 530 LET p(i,4)=p(i,4)-1
  540 RETURN 
  550 REM *** getinp ***
- 560 IF cp=1 THEN PAUSE 0: LET c$=INKEY$
- 570 IF cp<>1 THEN LET c$=" "
+ 560 IF cp=1 THEN GO SUB 590
+ 570 IF cp<>1 THEN GO SUB 620
  580 RETURN 
- 590 REM *** dismap ***
- 600 FOR i=1 TO mrows: PRINT AT i-1,0;m$(i): NEXT i
+ 590 REM *** keyinp ***
+ 600 PAUSE 0: LET c$=INKEY$
  610 RETURN 
- 620 REM *** disitems ***
- 630 FOR i=1 TO nps: PRINT AT p(i,3),p(i,2);CHR$ p(i,1): NEXT i
- 640 PRINT AT 0,24;"HP: ";p(1,4)
- 650 RETURN 
- 660 REM *** init ***
- 670 LET c$=" "
- 680 LET gameon=1
- 690 REM === map data ===
- 700 LET mrows=22
- 710 DIM m$(mrows, 20)
- 720 FOR i=1 TO mrows: READ m$(i): NEXT i
- 730 REM === player data ===
- 740 LET nps=2
- 750 DIM p(nps, 4)
- 760 LET cp=1
- 770 FOR i=1 TO nps
- 780 READ z$: LET p(i,1)=CODE z$
- 790 READ p(i,2): READ p(i,3): READ p(i,4)
- 800 NEXT i
- 810 RETURN 
- 820 REM === map ===
- 830 DATA "##########   #######"
- 840 DATA "#        #####     #"
- 850 DATA "#                  #"
- 860 DATA "#        #####     #"
- 870 DATA "##### #####  #######"
- 880 DATA "    #     #         "
- 890 DATA "    ##### #         "
- 900 DATA "######### #####     "
- 910 DATA "#             #     "
- 920 DATA "#             #     "
- 930 DATA "#             #     "
- 940 DATA "#             #     "
- 950 DATA "#             #     "
- 960 DATA "#             #     "
- 970 DATA "#### ##########     "
- 980 DATA "   # #  ############"
- 990 DATA "   # #  #          #"
-1000 DATA "   # #  #          #"
-1010 DATA "   # #  #          #"
-1020 DATA "   # ####          #"
-1030 DATA "   #               #"
-1040 DATA "   #################"
-1050 REM === players ===
-1060 DATA "@", 10, 10, 5
-1070 DATA "h", 7, 10, 5
+ 620 REM *** ai_inp***
+ 630 IF p(1,2)< p(cp,2) THEN LET c$="a"
+ 640 IF p(1,2)> p(cp,2) THEN LET c$="d"
+ 650 IF p(1,3)< p(cp,3) THEN LET c$="w"
+ 660 IF p(1,3)> p(cp,3) THEN LET c$="s"
+ 670 RETURN 
+ 680 REM *** dismap ***
+ 690 FOR i=1 TO mrows: PRINT AT i-1,0;m$(i): NEXT i
+ 700 RETURN 
+ 710 REM *** disitems ***
+ 720 FOR i=1 TO nps: PRINT AT p(i,3),p(i,2);CHR$ p(i,1): NEXT i
+ 730 PRINT AT 0,24;"HP: ";p(1,4)
+ 740 RETURN 
+ 750 REM *** init ***
+ 760 LET c$=" "
+ 770 LET gameon=1
+ 780 REM === map data ===
+ 790 LET mrows=22
+ 800 DIM m$(mrows, 20)
+ 810 FOR i=1 TO mrows: READ m$(i): NEXT i
+ 820 REM === player data ===
+ 830 LET nps=2
+ 840 DIM p(nps, 4)
+ 850 LET cp=1
+ 860 FOR i=1 TO nps
+ 870 READ z$: LET p(i,1)=CODE z$
+ 880 READ p(i,2): READ p(i,3): READ p(i,4)
+ 890 NEXT i
+ 900 RETURN 
+ 910 REM === map ===
+ 920 DATA "##########   #######"
+ 930 DATA "#        #####     #"
+ 940 DATA "#                  #"
+ 950 DATA "#        #####     #"
+ 960 DATA "##### #####  #######"
+ 970 DATA "    #     #         "
+ 980 DATA "    ##### #         "
+ 990 DATA "######### #####     "
+1000 DATA "#             #     "
+1010 DATA "#             #     "
+1020 DATA "#             #     "
+1030 DATA "#             #     "
+1040 DATA "#             #     "
+1050 DATA "#             #     "
+1060 DATA "#### ##########     "
+1070 DATA "   # #  ############"
+1080 DATA "   # #  #          #"
+1090 DATA "   # #  #          #"
+1100 DATA "   # #  #          #"
+1110 DATA "   # ####          #"
+1120 DATA "   #               #"
+1130 DATA "   #################"
+1140 REM === players ===
+1150 DATA "@", 10, 10, 5
+1160 DATA "h", 7, 10, 5

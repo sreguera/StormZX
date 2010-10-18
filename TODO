@@ -1,16 +1,21 @@
 * Create a finish screen.
 * Use UDGs, colors, ...
-* IA for the NPCs.
+* Improve the AI for the NPCs.
 * Change the command from the input key to verb noun1 noun2.
 * Add objects. Start with gold $.
 * Random Character Generation.
 * Random Level Generation.
 * Visibility. Show only what the player is seeing.
 * Use machine code for increased speed and saved space.
-* Use lower lines for logging.
+* Use lower lines for logging. Use an array of 2 strings to scroll.
 * Add sound effects.
 
-DONE
+DONE 18-10-2010
+* Created subsoutines for keyboard and AI input.
+* Added first basic AI for the NPCs.
+* Modified attack so that it removes hp from the target.
+
+DONE 15-10-2010
 * Improve opening screen using centered strings and vertical space.
 * Put in DATAs the initial definition of characters.
 * Check for collisions between characters.
