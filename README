@@ -43,3 +43,6 @@ Global Variables:
 * c$ : current command
 * gameon : 0 if the game is finished, 1 otherwise.
 
+Note that all loops involving the p array go from 0 to nps.
+The hp field is checked to see if the entry is a live player (hp>0).
+dead players are not processed.
