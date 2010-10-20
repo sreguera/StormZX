@@ -21,6 +21,7 @@ Routines:
 * storm : main program.
 * present (presentation) : shows the title screen and the keys, and
   waits for a key to be pressed.
+* finish : shows the finish screen.
 * init : initializes the program variables.
 * main : main program loop.
 * round : one game round.
