@@ -1,14 +1,18 @@
 * Use UDGs, colors, ...
 * Improve the AI for the NPCs.
 * Change the command from the input key to verb noun1 noun2.
-* Add objects. Start with gold $.
-* Add special object and make the player win after touching it.
+* Add gold $.
+* Make the player win after touching special object +.
 * Random Character Generation.
 * Random Level Generation.
 * Visibility. Show only what the player is seeing.
 * Use machine code for increased speed and saved space.
 * Use lower lines for logging. Use an array of 2 strings to scroll.
 * Add sound effects.
+
+DONE 31-10-2010
+* Added objects, starting with special object +.
+* Game ends after touching special object +.
 
 DONE 20-10-2010
 * Created a finish screen.

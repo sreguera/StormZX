@@ -38,9 +38,11 @@ Global Variables:
 
 * m$ (array(mrows) of string(20)) : map of the dungeon
 * mrows : number of rows in the map array.
-* p (array(nps) of number(3)) : array of players (rep, xpos, ypos, hp)
+* p (array(nps) of number(4)) : array of players (rep, xpos, ypos, hp)
 * nps : number of players
 * cp : current player 
+* o (array(nobs) of number(3)) : array of objects (rep, xpos, ypos)
+* nobs : number of objects
 * c$ : current command
 * gameon : 0 if the game is finished, 1 otherwise.
 
