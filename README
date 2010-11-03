@@ -31,13 +31,16 @@ Routines:
 * getinp (get input) : reads a command from the current player.
 * keyinp (keyboard input) : reads a command from the keyboard.
 * ai_inp (AI input) : reads a command from the player AI.
-* dismap (display map) : draws the map on the screen.
+* vispyr (visualize player) : draws the map around the player and marks
+  it as visible.
 * disitems (display items) : draws the items on the screen. Also stats.
 
 Global Variables:
 
 * m$ (array(mrows) of string(20)) : map of the dungeon
 * mrows : number of rows in the map array.
+* v$ (array(mrows) of string(20)) : visibility map. All the positions 
+  containing a "v" are visible and shall be shown.
 * p (array(nps) of number(4)) : array of players (rep, xpos, ypos, hp)
 * nps : number of players
 * cp : current player 

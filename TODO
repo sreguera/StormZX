@@ -1,3 +1,5 @@
+* Simplify the visibility code. Maybe a routine "delete character" that
+  will remove the character and draw the tile under it.
 * Use UDGs, colors, ...
 * Improve the AI for the NPCs.
 * Change the command from the input key to verb noun1 noun2.
@@ -5,10 +7,12 @@
 * Make the player win after touching special object +.
 * Random Character Generation.
 * Random Level Generation.
-* Visibility. Show only what the player is seeing.
 * Use machine code for increased speed and saved space.
 * Use lower lines for logging. Use an array of 2 strings to scroll.
 * Add sound effects.
+
+DONE 03-11-2010
+* Added a kind of visibility.
 
 DONE 31-10-2010
 * Added objects, starting with special object +.
